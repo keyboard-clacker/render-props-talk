@@ -1,0 +1,36 @@
+class Hovering extends Component {
+  state = { hovering: false }
+
+  render() {
+    return (
+      <div
+        onMouseEnter={() => this.setState({ hovering: true })}
+        onMouseLeave={() => this.setState({ hovering: false })}
+      >
+        {this.props.children(this.state.hovering)}
+      </div>
+    )
+  }
+}
+
+function UserList({ users }) {
+  return (
+    <Fragment>
+      {users.map((user) => (
+        <Hovering>
+          {(hovering) => <UserAvatar someHoveringProp={hovering} />}
+        </Hovering>
+      ))}
+    </Fragment>
+  )
+}
+
+class UserAvatar extends Component {
+  render() {
+    const style = {
+      backgroundColor: this.props.someHoveringProp ? 'red' : 'blue'
+    }
+
+    return <div style={style}>{this.props.name}</div>
+  }
+}

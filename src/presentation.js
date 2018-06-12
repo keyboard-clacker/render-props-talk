@@ -297,6 +297,31 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
+        <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
+          <VtsHeading size={2} textColor="white">
+            Render props
+          </VtsHeading>
+        </Slide>
+        <CodeSlide
+          lang="js"
+          bgColor="gray"
+          color="white"
+          code={require('!raw-loader!./HOC.js.example')}
+          ranges={[{ loc: [0, 16] }]}
+        />
+        <CodeSlide
+          lang="js"
+          bgColor="gray"
+          color="white"
+          code={require('!raw-loader!./renderProps.js.example')}
+          ranges={[
+            { loc: [0, 14] },
+            { loc: [15, 26] },
+            { loc: [27, 36] },
+            { loc: [0, 14] },
+            { loc: [9, 10] }
+          ]}
+        />
         <Slide
           textAlign="left"
           bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo"
