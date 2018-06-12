@@ -1,0 +1,38 @@
+class UserAvatar extends Component {
+  onMouseEnter = () => this.setState({ hovering: true })
+  onMouseLeave = () => this.setState({ hovering: false })
+
+  render() {
+    const style = {
+      backgroundColor: this.state.hovering ? 'red' : 'blue'
+    }
+
+    return (
+      <div style={style}>
+        { this.props.name }
+      </div>
+    )
+  }
+}
+
+class AdminAvatar extends Component {
+  onMouseEnter = () => this.setState({ hovering: true })
+  onMouseLeave = () => this.setState({ hovering: false })
+
+  render() {
+    const style = {
+      backgroundColor: this.state.hovering ? 'red' : 'blue'
+    }
+
+    return (
+      <div style={style}>
+        { this.props.name } (Admin)
+      </div>
+    )
+  }
+}
+
+
+
+
+

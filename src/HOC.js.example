@@ -1,0 +1,40 @@
+function withHovering(SomeComponent) {
+  return class extends Component {
+    state = { hovering: false }
+
+    render() {
+      return (
+        <div
+          onMouseEnter={() => this.setState({ hovering: true })}
+          onMouseLeave={() => this.setState({ hovering: false })}
+        >
+          <SomeComponent {...this.props} hovering={this.state.hovering} />
+        </div>
+      )
+    }
+  }
+}
+
+class _UserAvatar extends Component {
+  render() {
+    const style = {
+      backgroundColor: this.props.hovering ? 'red' : 'blue'
+    }
+
+    return (
+      <div style={style}>
+        { this.props.name }
+      </div>
+    )
+  }
+}
+
+const UserAvatar = withHovering(_UserAvatar)
+
+
+
+
+
+
+
+

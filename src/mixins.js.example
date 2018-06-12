@@ -1,0 +1,34 @@
+const HoverMixin = {
+  onMouseEnter() {
+    this.setState({ hovering: true })
+  },
+  onMouseLeave() {
+    this.setState({ hovering: false })
+  }
+}
+
+const UserAvatar = React.createClass({
+  mixins: [HoverMixin],
+  render() {
+    const style = {
+      backgroundColor: this.state.hovering ? 'red' : 'blue'
+    }
+
+    return (
+      <div style={style}>{this.props.name}</div>
+    )
+  }
+})
+
+const AdminAvatar = React.createClass({
+  mixins: [HoverMixin],
+  render() {
+    const style = {
+      backgroundColor: this.state.hovering ? 'red' : 'blue'
+    }
+
+    return (
+      <div style={style}>{this.props.name} (Admin)</div>
+    )
+  }
+})
