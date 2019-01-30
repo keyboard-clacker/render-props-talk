@@ -29,7 +29,7 @@ class _UserAvatar extends Component {
   }
 }
 
-const UserAvatar = withHovering(_UserAvatar)
+const StandardUserAvatar = withHovering(_UserAvatar)
 
 
 

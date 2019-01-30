@@ -1,7 +1,6 @@
 /* eslint import/no-webpack-loader-syntax:0 */
 // Import React
 import React from 'react'
-import styled from 'react-emotion'
 
 // Import Spectacle Core tags
 import {
@@ -13,7 +12,6 @@ import {
   List,
   Quote,
   Slide,
-  Text,
   Appear,
   Fit,
   Fill,
@@ -23,47 +21,14 @@ import {
 } from 'spectacle'
 
 import CodeSlide from 'spectacle-code-slide'
+
 import 'prism-themes/themes/prism-atom-dark.css'
 
 // Import theme
-import createTheme from 'spectacle/lib/themes/default'
+import { TitleSlide, TitleHeading, theme } from './vts-slides'
 
 // Require CSS
 require('normalize.css')
-
-const theme = createTheme(
-  {
-    primary: '#5528ff',
-    black: '#191919',
-    gray: '#1d1f21',
-    aqua: '#00c8c8',
-    white: '#FFFFFF',
-    quarternary: '#00C8C8'
-  },
-  {
-    primary: {
-      name: 'Playfair Display',
-      googleFont: true
-    },
-    secondary: 'Helvetica'
-  }
-)
-
-const VtsHeading = styled(Heading)`
-  position: fixed;
-  left: 100px;
-  bottom: -300px;
-  max-width: 800px;
-  text-align: left;
-`
-
-const VtsSlideHeading = styled(Heading)`
-  position: fixed;
-  left: 100px;
-  top: -300px;
-  max-width: 800px;
-  text-align: left;
-`
 
 export default class Presentation extends React.Component {
   render() {
@@ -79,9 +44,18 @@ export default class Presentation extends React.Component {
         controls={false}
       >
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsHeading bold size={1} textColor="white">
-            Render your way to a better future
-          </VtsHeading>
+          <TitleSlide size={1} textColor="white">
+            <div>Shared Component Behavior</div>
+            <div
+              style={{
+                fontWeight: 'normal',
+                fontSize: '36px',
+                marginTop: '25px'
+              }}
+            >
+              @kyleholzinger
+            </div>
+          </TitleSlide>
         </Slide>
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
           <Heading size={2} textColor="white" textAlign="left">
@@ -89,41 +63,44 @@ export default class Presentation extends React.Component {
           </Heading>
           <List textColor="white">
             <ListItem>Shared behavior</ListItem>
-            <Appear order={2}>
-              <ListItem>Mix-ins</ListItem>
-            </Appear>
-            <Appear order={3}>
-              <ListItem>HOC</ListItem>
-            </Appear>
-            <Appear order={4}>
-              <ListItem>Render props</ListItem>
-            </Appear>
+            <ListItem>Mix-ins</ListItem>
+            <ListItem>HOC</ListItem>
+            <ListItem>Render props</ListItem>
+            <ListItem>Future</ListItem>
           </List>
         </Slide>
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./sharedBehavior.js.example')}
-          ranges={[{ loc: [0, 16] }, { loc: [17, 33] }, { loc: [18, 20] }]}
+          code={require('!raw-loader!./examples/sharedBehavior.js.example')}
+          ranges={[
+            { loc: [0, 16] },
+            { loc: [17, 33] },
+            { loc: [1, 3] },
+            { loc: [18, 20] }
+          ]}
         />
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsHeading size={2} textColor="white">
-            Mix-ins
-          </VtsHeading>
+          <TitleSlide size={2} textColor="white">
+            1.{' '}
+            <Appear order={1}>
+              <span>Mix-ins</span>
+            </Appear>
+          </TitleSlide>
         </Slide>
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./sharedBehavior.js.example')}
+          code={require('!raw-loader!./examples/sharedBehavior.js.example')}
           ranges={[{ loc: [18, 20] }]}
         />
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./mixins.js.example')}
+          code={require('!raw-loader!./examples/mixins.js.example')}
           ranges={[
             { loc: [0, 8] },
             { loc: [9, 21] },
@@ -132,7 +109,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsSlideHeading textColor="white">Mix-ins</VtsSlideHeading>
+          <TitleHeading textColor="white">Mix-ins</TitleHeading>
           <Layout>
             <Fill>
               <List margin="-50px 0 0 150px" textColor="white">
@@ -172,7 +149,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsSlideHeading textColor="white">Mix-ins</VtsSlideHeading>
+          <TitleHeading textColor="white">Mix-Vins</TitleHeading>
           <Layout>
             <Fill>
               <List
@@ -217,42 +194,48 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
-        <CodeSlide
-          lang="js"
-          bgColor="gray"
-          color="white"
-          code={require('!raw-loader!./mixins.js.example')}
-          ranges={[{ loc: [0, 8] }]}
-        />
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsHeading size={2} textColor="white">
-            Higher-order components
-          </VtsHeading>
+          <TitleSlide size={2} textColor="white">
+            2.{' '}
+            <Appear order={1}>
+              <span>Higher-order components</span>
+            </Appear>
+          </TitleSlide>
         </Slide>
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./mixins.js.example')}
-          ranges={[{ loc: [0, 8] }, { loc: [2, 3] }, { loc: [5, 6] }]}
+          code={require('!raw-loader!./examples/mixins.js.example')}
+          ranges={[
+            {
+              loc: [0, 8],
+              note: 'Mix-in exmaple... Notice the orphaned `this` :('
+            }
+          ]}
         />
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./HOC.js.example')}
+          code={require('!raw-loader!./examples/HOC.js.example')}
           ranges={[
-            { loc: [0, 16] },
+            {
+              loc: [0, 16],
+              note: 'HOC example. No more `this` outside of its lexical scope!'
+            },
             { loc: [17, 32] },
             { loc: [31, 32] },
             { loc: [0, 16] },
-            { loc: [6, 12] }
+            { loc: [6, 12] },
+            { loc: [10, 11] },
+            { loc: [20, 21] }
           ]}
         />
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsSlideHeading size={3} textColor="white">
+          <TitleHeading size={3} textColor="white">
             Higher-order components
-          </VtsSlideHeading>
+          </TitleHeading>
           <Layout>
             <Fill>
               <List margin="-50px 0 0 150px" textColor="white">
@@ -298,22 +281,25 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <VtsHeading size={2} textColor="white">
-            Render props
-          </VtsHeading>
+          <TitleSlide size={2} textColor="white">
+            3.{' '}
+            <Appear order={1}>
+              <span>Render props</span>
+            </Appear>
+          </TitleSlide>
         </Slide>
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./HOC.js.example')}
+          code={require('!raw-loader!./examples/HOC.js.example')}
           ranges={[{ loc: [0, 16] }]}
         />
         <CodeSlide
           lang="js"
           bgColor="gray"
           color="white"
-          code={require('!raw-loader!./renderProps.js.example')}
+          code={require('!raw-loader!./examples/renderProps.js.example')}
           ranges={[
             { loc: [0, 14] },
             { loc: [15, 26] },
@@ -321,6 +307,71 @@ export default class Presentation extends React.Component {
             { loc: [0, 14] },
             { loc: [9, 10] }
           ]}
+        />
+        <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
+          <TitleHeading size={3} textColor="white">
+            Render props
+          </TitleHeading>
+          <Layout>
+            <Fill>
+              <List margin="-50px 0 0 150px" textColor="white">
+                <Heading
+                  padding="10px 0"
+                  size={4}
+                  textAlign="left"
+                  textColor="white"
+                >
+                  Pros
+                </Heading>
+                <ListItem>Props are immutable</ListItem>
+                <ListItem>Can still compose these together</ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <List margin="-50px 0 0 100px" textColor="white">
+                <Heading
+                  padding="10px 0"
+                  size={4}
+                  textAlign="left"
+                  textColor="white"
+                >
+                  Cons
+                </Heading>
+                <ListItem>
+                  <S type="strikethrough">Implicit behavior</S>
+                </ListItem>
+                <ListItem>
+                  <S type="strikethrough">
+                    Relies on a specific property <br />
+                    being on <Code textColor="white">props</Code>
+                  </S>
+                </ListItem>
+                <ListItem>
+                  <S type="strikethrough">
+                    Accesses <Code textColor="white">this</Code>
+                    outside of the <br /> lexical scope of the component
+                  </S>
+                </ListItem>
+                <Appear order={1}>
+                  <ListItem>Can be a little difficult to read</ListItem>
+                </Appear>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <CodeSlide
+          lang="jsx"
+          bgColor="gray"
+          color="white"
+          code={require('!raw-loader!./examples/renderPropsProblem.js.example')}
+          ranges={[{ loc: [0, 21] }]}
+        />
+        <CodeSlide
+          lang="jsx"
+          bgColor="gray"
+          color="white"
+          code={require('!raw-loader!./examples/renderPropsPotentialSolution.js.example')}
+          ranges={[{ loc: [0, 5] }, { loc: [0, 15] }]}
         />
         <Slide
           textAlign="left"
@@ -335,6 +386,11 @@ export default class Presentation extends React.Component {
             </Fit>
             <Fill />
           </Layout>
+        </Slide>
+        <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
+          <TitleSlide size={2} textColor="white">
+            @kyleholzinger
+          </TitleSlide>
         </Slide>
       </Deck>
     )

@@ -1,0 +1,15 @@
+const ComposedComponent = compose([
+  <MousePosition relative={true} />,
+  <Subscription url="/api/notes" />,
+  <Validate />
+])
+
+// --------------------------------------------------
+
+<ComposedComponent>
+  {(...args) => (
+    <div>
+      The values passed were: <Dump allArgs={args} />
+    </div>
+  )}
+</ComposedComponent>

@@ -1,4 +1,4 @@
-class UserAvatar extends Component {
+class StandardUserAvatar extends Component {
   onMouseEnter = () => this.setState({ hovering: true })
   onMouseLeave = () => this.setState({ hovering: false })
 
@@ -15,7 +15,7 @@ class UserAvatar extends Component {
   }
 }
 
-class AdminAvatar extends Component {
+class ProUserAvatar extends Component {
   onMouseEnter = () => this.setState({ hovering: true })
   onMouseLeave = () => this.setState({ hovering: false })
 

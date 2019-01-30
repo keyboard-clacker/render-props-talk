@@ -7,7 +7,7 @@ const HoverMixin = {
   }
 }
 
-const UserAvatar = React.createClass({
+const StandardUserAvatar = React.createClass({
   mixins: [HoverMixin],
   render() {
     const style = {
@@ -20,7 +20,7 @@ const UserAvatar = React.createClass({
   }
 })
 
-const AdminAvatar = React.createClass({
+const ProUserAvatar = React.createClass({
   mixins: [HoverMixin],
   render() {
     const style = {
