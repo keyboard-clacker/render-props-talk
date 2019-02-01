@@ -149,7 +149,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide bgImage="https://lh3.googleusercontent.com/PQU3TKUIjfrybevxvzEsiYPiF0OVtgUV4bCP8mld7ixaA_Yqwg9lnZ4uosF9acy5F_tiM6yxPPIm2cAXBJEewMS1JLGNqqufo3zqYl0TGxSsxLegWdy33q4osfpybvFe0djX4nEsmvo">
-          <TitleHeading textColor="white">Mix-Vins</TitleHeading>
+          <TitleHeading textColor="white">Mix-ins</TitleHeading>
           <Layout>
             <Fill>
               <List
