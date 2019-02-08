@@ -1,0 +1,15 @@
+function StandardUserAvatar({ userId }) {
+  const [ user, setUser ] = useState(null)
+
+  useEffect(async () => {
+    const { user } = await fetch(`/api/user/${userId}`)
+    setUser(user)
+  })
+
+  return (
+    <div>
+      <img src={user.profileUrl} />
+      {user ? user.name : 'Loading...'}
+    </div>
+  )
+}

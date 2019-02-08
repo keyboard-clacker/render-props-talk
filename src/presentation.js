@@ -11,7 +11,6 @@ import {
   ListItem,
   List,
   Quote,
-  Slide,
   Appear,
   Fit,
   Fill,
@@ -63,21 +62,21 @@ export default () => {
         <List textColor="white">
           <ListItem>Shared behavior</ListItem>
           <ListItem>Mix-ins</ListItem>
-          <ListItem>HOC</ListItem>
+          <ListItem>Higher-order components</ListItem>
           <ListItem>Render props</ListItem>
           <ListItem>Future</ListItem>
         </List>
       </VtsSlide>
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/sharedBehavior.js.example')}
         ranges={[
-          { loc: [0, 16] },
-          { loc: [17, 33] },
-          { loc: [1, 3] },
-          { loc: [18, 20] }
+          { title: 'What is shared behavior?', loc: [0, 16] },
+          { title: 'What is shared behavior?', loc: [17, 33] },
+          { title: 'What is shared behavior?', loc: [1, 3] },
+          { title: 'What is shared behavior?', loc: [18, 20] }
         ]}
       />
       <VtsSlide>
@@ -89,22 +88,22 @@ export default () => {
         </TitleSlide>
       </VtsSlide>
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/sharedBehavior.js.example')}
-        ranges={[{ loc: [18, 20] }]}
+        ranges={[{ loc: [18, 20], note: 'Shared behavior example' }]}
       />
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/mixins.js.example')}
         ranges={[
-          { loc: [0, 8] },
-          { loc: [9, 21] },
-          { loc: [10, 11] },
-          { loc: [22, 34] }
+          { title: 'Mix-ins', loc: [0, 8] },
+          { title: 'Mix-ins', loc: [9, 21] },
+          { title: 'Mix-ins', loc: [10, 11] },
+          { title: 'Mix-ins', loc: [22, 34] }
         ]}
       />
       <VtsSlide>
@@ -196,7 +195,7 @@ export default () => {
         </TitleSlide>
       </VtsSlide>
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/mixins.js.example')}
@@ -208,21 +207,27 @@ export default () => {
         ]}
       />
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/HOC.js.example')}
         ranges={[
           {
+            title: 'Higher-order component',
             loc: [0, 16],
-            note: 'HOC example. No more `this` outside of its lexical scope!'
+            note: 'No more `this` outside of its lexical scope!'
           },
-          { loc: [17, 32] },
-          { loc: [31, 32] },
-          { loc: [0, 16] },
-          { loc: [6, 12] },
-          { loc: [10, 11] },
-          { loc: [20, 21] }
+          { title: 'Higher-order component', loc: [17, 32] },
+          { title: 'Higher-order component', loc: [31, 32] },
+          { title: 'Higher-order component', loc: [0, 16] },
+          { title: 'Higher-order component', loc: [6, 12] },
+          { title: 'Higher-order component', loc: [10, 11] },
+          {
+            title: 'Higher-order component',
+            loc: [20, 21],
+            note:
+              'Bonus round! Now using props instead of state (reduces responsibility)'
+          }
         ]}
       />
       <VtsSlide>
@@ -240,6 +245,8 @@ export default () => {
               >
                 Pros
               </Heading>
+              <ListItem>DRYs up components</ListItem>
+              <ListItem>Unit tests</ListItem>
               <ListItem>Props are immutable</ListItem>
               <ListItem>Can still compose these together</ListItem>
             </List>
@@ -274,6 +281,54 @@ export default () => {
         </Layout>
       </VtsSlide>
       <VtsSlide>
+        <TitleHeading size={3} textColor="white">
+          Higher-order components
+        </TitleHeading>
+        <Layout>
+          <Fill>
+            <List margin="-50px 0 0 150px" textColor="white">
+              <Heading
+                padding="10px 0"
+                size={4}
+                textAlign="left"
+                textColor="white"
+              >
+                Pros
+              </Heading>
+              <ListItem style={{ opacity: 0.5 }}>DRYs up components</ListItem>
+              <ListItem style={{ opacity: 0.5 }}>Unit tests</ListItem>
+              <ListItem style={{ opacity: 0.5 }}>Props are immutable</ListItem>
+              <ListItem style={{ opacity: 0.5 }}>
+                Can still compose these together
+              </ListItem>
+            </List>
+          </Fill>
+          <Fill>
+            <List margin="-50px 0 0 100px" textColor="white">
+              <Heading
+                padding="10px 0"
+                size={4}
+                textAlign="left"
+                textColor="white"
+              >
+                Cons
+              </Heading>
+              <ListItem>Implicit behavior</ListItem>
+              <ListItem>
+                Relies on a specific property <br />
+                being on <Code textColor="white">props</Code>
+              </ListItem>
+              <ListItem style={{ opacity: 0.5 }}>
+                <S type="strikethrough">
+                  Accesses <Code textColor="white">this</Code>
+                  outside of the <br /> lexical scope of the component
+                </S>
+              </ListItem>
+            </List>
+          </Fill>
+        </Layout>
+      </VtsSlide>
+      <VtsSlide>
         <TitleSlide size={2} textColor="white">
           3.{' '}
           <Appear order={1}>
@@ -282,23 +337,31 @@ export default () => {
         </TitleSlide>
       </VtsSlide>
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/HOC.js.example')}
         ranges={[{ loc: [0, 16] }]}
       />
       <CodeSlide
-        lang="js"
+        lang="jsx"
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/renderProps.js.example')}
         ranges={[
-          { loc: [0, 14] },
-          { loc: [15, 26] },
-          { loc: [27, 36] },
-          { loc: [0, 14] },
-          { loc: [9, 10] }
+          { title: 'Render props', loc: [0, 14] },
+          { title: 'Render props', loc: [9, 10] },
+          {
+            title: 'Render props',
+            loc: [15, 26],
+            note: 'No more implicit behavior!'
+          },
+          { title: 'Render props', loc: [25, 36] },
+          {
+            title: 'Render props',
+            loc: [30, 31],
+            note: 'No more relying on a specific property name!'
+          }
         ]}
       />
       <VtsSlide>
@@ -318,6 +381,8 @@ export default () => {
               </Heading>
               <ListItem>Props are immutable</ListItem>
               <ListItem>Can still compose these together</ListItem>
+              <ListItem>DRYs up components</ListItem>
+              <ListItem>Unit tests</ListItem>
             </List>
           </Fill>
           <Fill>
@@ -365,6 +430,47 @@ export default () => {
         color="white"
         code={require('!raw-loader!./examples/renderPropsPotentialSolution.js.example')}
         ranges={[{ loc: [0, 5] }, { loc: [0, 15] }]}
+      />
+      <VtsSlide>
+        <TitleSlide size={2} textColor="white">
+          4.{' '}
+          <Appear order={1}>
+            <span>Hooks?</span>
+          </Appear>
+        </TitleSlide>
+      </VtsSlide>
+      <CodeSlide
+        lang="jsx"
+        bgColor="gray"
+        color="white"
+        code={require('!raw-loader!./examples/renderPropsPotentialSolution.js.example')}
+        ranges={[{ loc: [0, 15] }]}
+      />
+      <CodeSlide
+        lang="jsx"
+        bgColor="gray"
+        color="white"
+        code={require('!raw-loader!./examples/subscription.js.example')}
+        ranges={[{ loc: [0, 19] }]}
+      />
+      <CodeSlide
+        lang="jsx"
+        bgColor="gray"
+        color="white"
+        code={require('!raw-loader!./examples/hooks.js.example')}
+        ranges={[
+          { loc: [0, 15] },
+          { loc: [1, 7] },
+          { loc: [8, 13] },
+          { loc: [0, 15] }
+        ]}
+      />
+      <CodeSlide
+        lang="jsx"
+        bgColor="gray"
+        color="white"
+        code={require('!raw-loader!./examples/abstractedHooks.js.example')}
+        ranges={[{ loc: [14, 24] }, { loc: [0, 24] }, { loc: [14, 37] }]}
       />
       <VtsSlide textAlign="left">
         <Layout>

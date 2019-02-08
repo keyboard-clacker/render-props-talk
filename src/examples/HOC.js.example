@@ -18,7 +18,7 @@ function withHovering(SomeComponent) {
 class _UserAvatar extends Component {
   render() {
     const style = {
-      backgroundColor: this.props.hovering ? 'red' : 'blue'
+      borderColor: this.props.hovering ? 'red' : 'blue'
     }
 
     return (

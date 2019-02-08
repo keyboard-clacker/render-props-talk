@@ -1,6 +1,6 @@
 const ComposedComponent = compose([
   <MousePosition relative={true} />,
-  <Subscription url="/api/notes" />,
+  <Subscription url="/api/user/1" />,
   <Validate />
 ])
 

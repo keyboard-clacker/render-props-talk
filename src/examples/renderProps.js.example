@@ -28,9 +28,10 @@ function UserList({ users }) {
 class UserAvatar extends Component {
   render() {
     const style = {
-      backgroundColor: this.props.someHoveringProp ? 'red' : 'blue'
+      borderColor: this.props.someHoveringProp ? 'red' : 'blue'
     }
 
     return <div style={style}>{this.props.name}</div>
   }
 }
+

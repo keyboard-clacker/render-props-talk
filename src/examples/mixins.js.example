@@ -11,7 +11,7 @@ const StandardUserAvatar = React.createClass({
   mixins: [HoverMixin],
   render() {
     const style = {
-      backgroundColor: this.state.hovering ? 'red' : 'blue'
+      borderColor: this.state.hovering ? 'red' : 'blue'
     }
 
     return (
@@ -24,7 +24,7 @@ const ProUserAvatar = React.createClass({
   mixins: [HoverMixin],
   render() {
     const style = {
-      backgroundColor: this.state.hovering ? 'red' : 'blue'
+      borderColor: this.state.hovering ? 'red' : 'blue'
     }
 
     return (

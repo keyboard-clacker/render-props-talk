@@ -1,0 +1,37 @@
+function useUser({ userId }) {
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    fetch(`/api/user/${userId}`)
+      .then(res => res.json())
+      .then(data => setUser(data.user))
+  })
+
+  return { user, setUser, err }
+}
+
+// -------------------------------------
+
+function StandardUserAvatar({ userId }) {
+  const { user } = useUser({ userId })
+
+  return (
+    <div>
+      <img src={user.profileUrl} />
+      {user ? user.name : 'Loading...'}
+    </div>
+  )
+}
+
+// -------------------------------------
+
+function ProUserAvatar({ userId }) {
+  const { user } = useUser({ userId })
+
+  return (
+    <div>
+      <img src={user.profileUrl} />
+      {user ? `${user.name} (Pro)` : 'Loading...'}
+    </div>
+  )
+}
