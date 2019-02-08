@@ -28,7 +28,7 @@ const ProUserAvatar = React.createClass({
     }
 
     return (
-      <div style={style}>{this.props.name} (Admin)</div>
+      <div style={style}>{this.props.name} (Pro)</div>
     )
   }
 })
