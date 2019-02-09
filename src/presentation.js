@@ -80,6 +80,21 @@ export default () => {
         ]}
       />
       <VtsSlide>
+        <TitleSlide>Whew! Questions?</TitleSlide>
+        <Appear order={1}>
+          <img
+            height={300}
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-20%, -50%) rotate(15deg)'
+            }}
+            src="https://i.imgur.com/FZx2kSm.gif"
+          />
+        </Appear>
+      </VtsSlide>
+      <VtsSlide>
         <TitleSlide size={2} textColor="white">
           1.{' '}
           <Appear order={1}>
