@@ -80,7 +80,7 @@ export default () => {
         ]}
       />
       <VtsSlide>
-        <TitleSlide>Whew! Questions?</TitleSlide>
+        <TitleSlide>Whew!</TitleSlide>
         <Appear order={1}>
           <img
             height={300}
@@ -425,6 +425,11 @@ export default () => {
                   outside of the <br /> lexical scope of the component
                 </S>
               </ListItem>
+              <img
+                height={300}
+                style={{ position: 'fixed', top: '80%', left: '10%' }}
+                src="https://fsmedia.imgix.net/88/fb/ea/43/3d64/4c1b/a7f5/71941f405f7c/rick-morty-jobgifw650.gif"
+              />
               <Appear order={1}>
                 <ListItem>Can be a little difficult to read</ListItem>
               </Appear>
@@ -502,6 +507,14 @@ export default () => {
         <TitleSlide size={2} textColor="white">
           @kyleholzinger
         </TitleSlide>
+      </VtsSlide>
+      <VtsSlide>
+        <TitleSlide>Questions?</TitleSlide>
+        <img
+          style={{ position: 'fixed', top: '-400%', left: '20%' }}
+          src="https://i.gifer.com/Z4aV.gif"
+          height={500}
+        />
       </VtsSlide>
     </Deck>
   )
