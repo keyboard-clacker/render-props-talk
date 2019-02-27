@@ -24,7 +24,7 @@ import CodeSlide from 'spectacle-code-slide'
 import 'prism-themes/themes/prism-atom-dark.css'
 
 // Import theme
-import { TitleSlide, TitleHeading, theme, VtsSlide } from './vts-slides'
+import { Title, TitleHeading, theme, VtsSlide } from './vts-slides'
 
 // Require CSS
 require('normalize.css')
@@ -42,7 +42,7 @@ export default () => {
       controls={false}
     >
       <VtsSlide>
-        <TitleSlide size={1} textColor="white">
+        <Title size={1} textColor="white">
           <div>Shared Component Behavior</div>
           <div
             style={{
@@ -53,7 +53,7 @@ export default () => {
           >
             @kyleholzinger
           </div>
-        </TitleSlide>
+        </Title>
       </VtsSlide>
       <VtsSlide>
         <Heading size={2} textColor="white" textAlign="left">
@@ -80,7 +80,7 @@ export default () => {
         ]}
       />
       <VtsSlide>
-        <TitleSlide>Whew!</TitleSlide>
+        <Title>Whew!</Title>
         <Appear order={1}>
           <img
             height={300}
@@ -95,12 +95,12 @@ export default () => {
         </Appear>
       </VtsSlide>
       <VtsSlide>
-        <TitleSlide size={2} textColor="white">
+        <Title size={2} textColor="white">
           1.{' '}
           <Appear order={1}>
             <span>Mix-ins</span>
           </Appear>
-        </TitleSlide>
+        </Title>
       </VtsSlide>
       <CodeSlide
         lang="jsx"
@@ -202,12 +202,12 @@ export default () => {
         </Layout>
       </VtsSlide>
       <VtsSlide>
-        <TitleSlide size={2} textColor="white">
+        <Title size={2} textColor="white">
           2.{' '}
           <Appear order={1}>
             <span>Higher-order components</span>
           </Appear>
-        </TitleSlide>
+        </Title>
       </VtsSlide>
       <CodeSlide
         lang="jsx"
@@ -344,12 +344,12 @@ export default () => {
         </Layout>
       </VtsSlide>
       <VtsSlide>
-        <TitleSlide size={2} textColor="white">
+        <Title size={2} textColor="white">
           3.{' '}
           <Appear order={1}>
             <span>Render props</span>
           </Appear>
-        </TitleSlide>
+        </Title>
       </VtsSlide>
       <CodeSlide
         lang="jsx"
@@ -452,12 +452,12 @@ export default () => {
         ranges={[{ loc: [0, 5] }, { loc: [0, 15] }]}
       />
       <VtsSlide>
-        <TitleSlide size={2} textColor="white">
+        <Title size={2} textColor="white">
           4.{' '}
           <Appear order={1}>
             <span>Hooks?</span>
           </Appear>
-        </TitleSlide>
+        </Title>
       </VtsSlide>
       <CodeSlide
         lang="jsx"
@@ -504,12 +504,12 @@ export default () => {
         </Layout>
       </VtsSlide>
       <VtsSlide>
-        <TitleSlide size={2} textColor="white">
+        <Title size={2} textColor="white">
           @kyleholzinger
-        </TitleSlide>
+        </Title>
       </VtsSlide>
       <VtsSlide>
-        <TitleSlide>Questions?</TitleSlide>
+        <Title>Questions?</Title>
         <img
           style={{ position: 'fixed', top: '-400%', left: '20%' }}
           src="https://i.gifer.com/Z4aV.gif"

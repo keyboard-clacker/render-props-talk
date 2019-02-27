@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 import { Heading } from 'spectacle'
 
-export const TitleSlide = styled(Heading)`
+export const Title = styled(Heading)`
   position: fixed;
   left: 100px;
   bottom: -300px;
