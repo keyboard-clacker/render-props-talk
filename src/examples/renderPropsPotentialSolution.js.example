@@ -8,6 +8,7 @@ const ComposedComponent = compose([
 
 <ComposedComponent>
   {(...args) => (
+    /** args is an array of all of the composed props! */
     <div>
       The values passed were: <Dump allArgs={args} />
     </div>

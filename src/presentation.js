@@ -500,6 +500,14 @@ export default () => {
           </Fill>
         </Layout>
       </VtsSlide>
+      <VtsSlide>
+        <Title size={2} textColor="white">
+          4.{' '}
+          <Appear order={1}>
+            <span>The Future!</span>
+          </Appear>
+        </Title>
+      </VtsSlide>
       <CodeSlide
         lang="jsx"
         bgColor="gray"
@@ -512,11 +520,14 @@ export default () => {
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/renderPropsPotentialSolution.js.example')}
-        ranges={[{ loc: [0, 5] }, { loc: [0, 15] }]}
+        ranges={[
+          { loc: [0, 5] },
+          { loc: [0, 16], note: 'Cue the Keanu "whoa"' }
+        ]}
       />
       <VtsSlide>
         <Title size={2} textColor="white">
-          4.{' '}
+          5.{' '}
           <Appear order={1}>
             <span>Hooks?</span>
           </Appear>
