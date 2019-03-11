@@ -18,6 +18,7 @@ import {
   Code,
   S
 } from 'spectacle'
+import styled from 'react-emotion'
 
 import CodeSlide from 'spectacle-code-slide'
 
@@ -25,9 +26,19 @@ import 'prism-themes/themes/prism-atom-dark.css'
 
 // Import theme
 import { Title, TitleHeading, theme, VtsSlide } from './vts-slides'
+import StandardUserAvatar from './StandardUserAvatar'
+import ProUserAvatar from './ProUserAvatar'
 
 // Require CSS
 require('normalize.css')
+
+const LowerTitleHeading = styled(Heading)`
+  position: fixed;
+  left: 100px;
+  top: -200px;
+  max-width: 800px;
+  text-align: left;
+`
 
 export default () => {
   return (
@@ -56,6 +67,30 @@ export default () => {
         </Title>
       </VtsSlide>
       <VtsSlide>
+        <LowerTitleHeading>About me</LowerTitleHeading>
+        <List
+          margin="-50px 0 0 150px"
+          style={{ lineHeight: '80px' }}
+          textColor="white"
+        >
+          <ListItem style={{ fontSize: '50px' }}>
+            Full-stack Engineer at VTS
+          </ListItem>
+          <ListItem style={{ fontSize: '50px' }}>
+            Leading migration from AngularJS 1.6 -> ReactJS
+          </ListItem>
+          <ListItem style={{ fontSize: '50px' }}>
+            Been working with React for ~6 years
+          </ListItem>
+          <ListItem style={{ fontSize: '50px' }}>
+            Started coding when I was 1 year old
+          </ListItem>
+          <ListItem style={{ fontSize: '50px' }}>
+            Learned Javascript before I knew English
+          </ListItem>
+        </List>
+      </VtsSlide>
+      <VtsSlide>
         <Heading size={2} textColor="white" textAlign="left">
           Summary
         </Heading>
@@ -66,6 +101,13 @@ export default () => {
           <ListItem>Render props</ListItem>
           <ListItem>Future</ListItem>
         </List>
+      </VtsSlide>
+      <VtsSlide>
+        <TitleHeading>What is shared behavior?</TitleHeading>
+        <span style={{ marginRight: '10px' }}>
+          <StandardUserAvatar name="Kyle" />
+        </span>
+        <ProUserAvatar name="Andrew" />
       </VtsSlide>
       <CodeSlide
         lang="jsx"
@@ -121,6 +163,13 @@ export default () => {
           { title: 'Mix-ins', loc: [22, 34] }
         ]}
       />
+      <VtsSlide>
+        <TitleHeading>Mix-ins</TitleHeading>
+        <span style={{ marginRight: '10px' }}>
+          <StandardUserAvatar name="Kyle" />
+        </span>
+        <ProUserAvatar name="Andrew" />
+      </VtsSlide>
       <VtsSlide>
         <TitleHeading textColor="white">Mix-ins</TitleHeading>
         <Layout>
@@ -228,7 +277,7 @@ export default () => {
         code={require('!raw-loader!./examples/HOC.js.example')}
         ranges={[
           {
-            title: 'Higher-order component',
+            title: 'Higher-order components',
             loc: [0, 16],
             note: 'No more `this` outside of its lexical scope!'
           },
@@ -245,6 +294,13 @@ export default () => {
           }
         ]}
       />
+      <VtsSlide>
+        <TitleHeading>Higher-order components</TitleHeading>
+        <span style={{ marginRight: '10px' }}>
+          <StandardUserAvatar name="Kyle" />
+        </span>
+        <ProUserAvatar name="Andrew" />
+      </VtsSlide>
       <VtsSlide>
         <TitleHeading size={3} textColor="white">
           Higher-order components
@@ -379,6 +435,13 @@ export default () => {
           }
         ]}
       />
+      <VtsSlide>
+        <TitleHeading>Render props</TitleHeading>
+        <span style={{ marginRight: '10px' }}>
+          <StandardUserAvatar name="Kyle" />
+        </span>
+        <ProUserAvatar name="Andrew" />
+      </VtsSlide>
       <VtsSlide>
         <TitleHeading size={3} textColor="white">
           Render props
