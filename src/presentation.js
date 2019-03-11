@@ -538,7 +538,7 @@ export default () => {
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/renderPropsPotentialSolution.js.example')}
-        ranges={[{ loc: [0, 15] }]}
+        ranges={[{ loc: [0, 16] }, { loc: [2, 3] }]}
       />
       <CodeSlide
         lang="jsx"
