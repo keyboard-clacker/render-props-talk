@@ -1,11 +1,12 @@
 function useUser({ userId }) {
   const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    fetch(`/api/user/${userId}`)
-      .then(res => res.json())
-      .then(data => setUser(data.user))
-  })
+  useEffect(async () => (
+    const res = await fetch(`/api/user/${userId}`)
+    const { user } = await res.json()
+
+    setUser(user)
+  ), [userId])
 
   return { user, setUser, err }
 }

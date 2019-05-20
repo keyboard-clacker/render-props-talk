@@ -551,10 +551,10 @@ export default () => {
         color="white"
         code={require('!raw-loader!./examples/hooks.js.example')}
         ranges={[
-          { loc: [0, 15] },
-          { loc: [1, 7] },
-          { loc: [8, 13] },
-          { loc: [0, 15] }
+          { loc: [0, 16] },
+          { loc: [1, 8] },
+          { loc: [9, 15] },
+          { loc: [0, 16] }
         ]}
       />
       <CodeSlide
@@ -562,14 +562,14 @@ export default () => {
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/abstractedHooks.js.example')}
-        ranges={[{ loc: [14, 24] }, { loc: [0, 24] }, { loc: [14, 37] }]}
+        ranges={[{ loc: [15, 25] }, { loc: [0, 25] }, { loc: [15, 38] }]}
       />
       <VtsSlide textAlign="left">
         <Layout>
           <Fit>
-            <BlockQuote>
-              <Quote textColor="white">“Example Quote”</Quote>
-              <Cite>Author</Cite>
+            <BlockQuote style={{width: "80vw"}}>
+              <Quote textColor="white">“Code is a liability”</Quote>
+              <Cite>Karl Baum</Cite>
             </BlockQuote>
           </Fit>
           <Fill />
