@@ -77,10 +77,10 @@ export default () => {
             Full-stack Engineer at VTS
           </ListItem>
           <ListItem style={{ fontSize: '50px' }}>
-            Leading migration from AngularJS 1.6 -> ReactJS
+            Been working with React for ~6 years
           </ListItem>
           <ListItem style={{ fontSize: '50px' }}>
-            Been working with React for ~6 years
+            Helped lead migration from AngularJS 1.6 -> ReactJS
           </ListItem>
           <ListItem style={{ fontSize: '50px' }}>
             Started coding when I was 1 year old
@@ -91,16 +91,18 @@ export default () => {
         </List>
       </VtsSlide>
       <VtsSlide>
-        <Heading size={2} textColor="white" textAlign="left">
-          Summary
-        </Heading>
-        <List textColor="white">
-          <ListItem>Shared behavior</ListItem>
-          <ListItem>Mix-ins</ListItem>
-          <ListItem>Higher-order components</ListItem>
-          <ListItem>Render props</ListItem>
-          <ListItem>Future</ListItem>
-        </List>
+        <div style={{marginLeft: "100px"}}>
+          <Heading size={2} textColor="white" textAlign="left">
+            Summary
+          </Heading>
+          <List textColor="white">
+            <ListItem>Shared behavior</ListItem>
+            <ListItem>Mix-ins</ListItem>
+            <ListItem>Higher-order components</ListItem>
+            <ListItem>Render props</ListItem>
+            <ListItem>Future</ListItem>
+          </List>
+        </div>
       </VtsSlide>
       <VtsSlide>
         <TitleHeading>What is shared behavior?</TitleHeading>
@@ -264,7 +266,7 @@ export default () => {
         ranges={[
           {
             loc: [0, 8],
-            note: 'Mix-in exmaple... Notice the orphaned `this` :('
+            note: 'Mix-in example... Notice the orphaned `this` :('
           }
         ]}
       />
@@ -276,17 +278,22 @@ export default () => {
         ranges={[
           {
             title: 'Higher-order components',
-            loc: [0, 16],
-            note: 'No more `this` outside of its lexical scope!'
+            loc: [0, 23],
           },
-          { title: 'Higher-order component', loc: [17, 32] },
-          { title: 'Higher-order component', loc: [31, 32] },
-          { title: 'Higher-order component', loc: [0, 16] },
-          { title: 'Higher-order component', loc: [6, 12] },
-          { title: 'Higher-order component', loc: [10, 11] },
+          { title: 'Higher-order component', loc: [14, 15] },
           {
             title: 'Higher-order component',
-            loc: [20, 21],
+            loc: [16, 32], 
+            note: 'No more `this` outside of its lexical scope!'
+          },
+          { title: 'Higher-order component', loc: [22, 28] },
+          {
+            title: 'Higher-order components',
+            loc: [0, 23],
+          },
+          {
+            title: 'Higher-order component',
+            loc: [3, 4],
             note:
               'Bonus round! Now using props instead of state (reduces responsibility)'
           }
@@ -410,7 +417,7 @@ export default () => {
         bgColor="gray"
         color="white"
         code={require('!raw-loader!./examples/HOC.js.example')}
-        ranges={[{ loc: [0, 16] }]}
+        ranges={[{ loc: [16, 32] }]}
       />
       <CodeSlide
         lang="jsx"
@@ -423,6 +430,10 @@ export default () => {
           {
             title: 'Render props',
             loc: [15, 26],
+          },
+          {
+            title: 'Render props',
+            loc: [20, 21],
             note: 'No more implicit behavior!'
           },
           { title: 'Render props', loc: [25, 36] },

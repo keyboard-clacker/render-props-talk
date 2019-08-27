@@ -1,3 +1,19 @@
+class _UserAvatar extends Component {
+  render() {
+    const style = {
+      borderColor: this.props.hovering ? 'red' : 'blue'
+    }
+
+    return (
+      <div style={style}>
+        { this.props.name }
+      </div>
+    )
+  }
+}
+
+const StandardUserAvatar = withHovering(_UserAvatar)
+
 function withHovering(SomeComponent) {
   return class extends Component {
     state = { hovering: false }
@@ -14,22 +30,6 @@ function withHovering(SomeComponent) {
     }
   }
 }
-
-class _UserAvatar extends Component {
-  render() {
-    const style = {
-      borderColor: this.props.hovering ? 'red' : 'blue'
-    }
-
-    return (
-      <div style={style}>
-        { this.props.name }
-      </div>
-    )
-  }
-}
-
-const StandardUserAvatar = withHovering(_UserAvatar)
 
 
 

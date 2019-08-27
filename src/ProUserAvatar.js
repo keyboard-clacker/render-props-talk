@@ -26,7 +26,8 @@ export default class ProUserAvatar extends Component {
           display: 'inline-block',
           border: '3px solid black',
           borderColor: this.state.hovering ? 'red' : 'yellow',
-          fontFamily: 'sans-serif'
+          fontFamily: 'sans-serif',
+          cursor: 'pointer'
         }}
       >
         <img style={{ width: '100%' }} src={blad} />
